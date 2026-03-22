@@ -319,7 +319,7 @@ For issues, questions, or contributions, refer to project documentation in the r
 
 ---
 
-## 📝 Log Training
+##  Log Training
 
 Setiap kali menjalankan `train_model.py`, akan ditampilkan:
 - ✓ Loading data progress
@@ -330,7 +330,7 @@ Setiap kali menjalankan `train_model.py`, akan ditampilkan:
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Model tidak ditemukan
 ```
@@ -359,7 +359,7 @@ streamlit run app.py --server.port 8502
 
 ---
 
-## 👨‍💻 Developer Notes
+##  Developer Notes
 
 Model dapat dikustomisasi dengan:
 - Menambah/mengurangi jumlah features
@@ -368,7 +368,7 @@ Model dapat dikustomisasi dengan:
 
 ---
 
-## 📞 Support & Feedback
+##  Support & Feedback
 
 Untuk pertanyaan atau improvement, silakan komunikasikan kebutuhan Anda!
 
