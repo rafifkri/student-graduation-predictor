@@ -1,0 +1,20 @@
+FEATURE ENGINEERING SUMMARY
+
+Total Original Features: 3
+Total Engineered Features: 12
+
+RECOMMENDED FEATURES (Top-7):
+1. ipk
+2. ipk_activity_ratio
+3. absen^2
+4. ipk^2
+5. ipk_category
+6. absen
+7. kegiatan
+
+
+FEATURE ENGINEERING TECHNIQUES APPLIED:
+1. Ratio Features: ipk_per_absence, activity_efficiency, ipk_activity_ratio
+2. Polynomial Features: ipk^2, absen^2, kegiatan^2, ipk×absen, ipk×kegiatan, absen×kegiatan
+3. Categorical Features: attendance_risk, ipk_category, activity_level
+4. Feature Scaling: StandardScaler (Z-score normalization)

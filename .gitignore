@@ -1,0 +1,120 @@
+# ============================================================================
+# Python & Virtual Environments
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+.env
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+poetry.lock
+
+# ============================================================================
+# Jupyter Notebook
+# ============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.jupyter/
+.ipynb
+
+# ============================================================================
+# IDEs & Editors
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+.DS_Store
+*.iml
+
+# ============================================================================
+# Data Files (Large)
+# ============================================================================
+# Keep dataset.csv but ignore large data files
+*.csv
+!data/dataset.csv
+*.xlsx
+*.xls
+*.json
+
+# ============================================================================
+# Model & Training Files
+# ============================================================================
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.model
+*.pth
+
+# Exclude saved models from gitignore (optional - uncomment if you want to track them)
+# !savemodel/
+
+# ============================================================================
+# Logs & Temporary Files
+# ============================================================================
+*.log
+logs/
+*.tmp
+temp/
+*.cache
+
+# ============================================================================
+# OS Specific
+# ============================================================================
+.DS_Store
+Thumbs.db
+.env.local
+.env.*.local
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+# Streamlit cache
+.streamlit/
+*.streamlit.cache
+
+# Matplotlib cache
+*.mplstyle
+
+# Test outputs
+htmlcov/
+.coverage
+.pytest_cache/
+
+# ============================================================================
+# Misc
+# ============================================================================
+.gitkeep
