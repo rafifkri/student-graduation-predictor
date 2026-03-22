@@ -348,7 +348,7 @@ streamlit run app.py --server.port 8502
 
 ---
 
-## 📚 Teknologi yang Digunakan
+##  Teknologi yang Digunakan
 
 - **Python 3.8+**
 - **Scikit-learn** - Machine Learning
