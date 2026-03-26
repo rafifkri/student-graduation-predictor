@@ -56,6 +56,7 @@ python src/train_model.py
 ```
 
 This generates the trained model files:
+
 - `savemodel/model_random_forest.pkl` - Trained classifier
 - `savemodel/label_encoder.pkl` - Target variable encoder
 
@@ -108,12 +109,12 @@ prediksi_lulus/
 
 For both training and batch prediction, use CSV format with these columns:
 
-| Column | Type | Range | Description |
-|--------|------|-------|-------------|
-| ipk | float | 0.0 - 4.0 | Cumulative grade point average |
-| absen | integer | 0 - 30 | Number of absences in semester |
-| kegiatan | integer | 0 - 10 | Activity participation score |
-| lulus_tepat_waktu | string | Ya/Tidak | Target: On-time graduation (training only) |
+| Column            | Type    | Range     | Description                                |
+| ----------------- | ------- | --------- | ------------------------------------------ |
+| ipk               | float   | 0.0 - 4.0 | Cumulative grade point average             |
+| absen             | integer | 0 - 30    | Number of absences in semester             |
+| kegiatan          | integer | 0 - 10    | Activity participation score               |
+| lulus_tepat_waktu | string  | Ya/Tidak  | Target: On-time graduation (training only) |
 
 ### Example CSV Format
 
@@ -139,12 +140,14 @@ ipk,absen,kegiatan
 ### Primary Model: Random Forest Classifier
 
 **Hyperparameters:**
+
 - n_estimators: 100 decision trees
 - max_depth: 10 levels per tree
 - Stratified train-test split: 80/20 distribution
 - Class balance: Preserved across all splits
 
 **Performance Metrics:**
+
 - Accuracy: High precision on test set
 - Cross-validation: Stratified K-Fold validation
 - Feature importance: IPK > Absen > Kegiatan
@@ -172,18 +175,21 @@ Based on the trained Random Forest model:
 ### Web Application Tabs
 
 #### Tab 1: Individual Prediction
+
 - Input single student metrics (IPK, Absensi, Kegiatan)
 - Receive prediction with confidence score
 - View personalized recommendations
 - Access baseline statistics for context
 
 #### Tab 2: Batch Prediction
+
 - Upload CSV file with multiple students
 - Process all records simultaneously
 - Export results with predictions and confidence scores
 - View summary statistics
 
 #### Tab 3: Model Analysis
+
 - Feature distributions and statistics
 - Model performance metrics
 - Feature importance visualization
@@ -192,11 +198,13 @@ Based on the trained Random Forest model:
 ### Interpretation Guide
 
 **Prediction Result: Ya (On-Time Graduation)**
+
 - Student meets expected academic standards
 - Action: Maintain current performance levels
 - Focus on consistency in attendance and engagement
 
 **Prediction Result: Tidak (Delayed Graduation Risk)**
+
 - Student shows risk indicators
 - Action: Implement early intervention strategies
 - Priority: Address lowest-performing metrics first
@@ -222,6 +230,7 @@ python src/train_model.py
 ```
 
 Outputs:
+
 - Model accuracy and classification metrics
 - Feature importance rankings
 - Cross-validation scores
@@ -277,6 +286,7 @@ For detailed metrics, see METHODOLOGY.md.
 ### Model File Not Found
 
 Ensure model files exist in `savemodel/` directory:
+
 ```bash
 python src/train_model.py
 ```
@@ -284,6 +294,7 @@ python src/train_model.py
 ### Port Already in Use
 
 If port 8501 is occupied:
+
 ```bash
 streamlit run dashboard/app.py --server.port 8502
 ```
@@ -291,6 +302,7 @@ streamlit run dashboard/app.py --server.port 8502
 ### Dependency Issues
 
 Reinstall all dependencies:
+
 ```bash
 pip install --upgrade -r requirements.txt
 ```
@@ -322,6 +334,7 @@ For issues, questions, or contributions, refer to project documentation in the r
 ## 📝 Log Training
 
 Setiap kali menjalankan `train_model.py`, akan ditampilkan:
+
 - ✓ Loading data progress
 - ✓ Data split information
 - ✓ Model training progress
@@ -333,22 +346,26 @@ Setiap kali menjalankan `train_model.py`, akan ditampilkan:
 ## 🐛 Troubleshooting
 
 ### Model tidak ditemukan
+
 ```
 FileNotFoundError: model_random_forest.pkl
 ```
+
 → Jalankan `python train_model.py` terlebih dahulu
 
 ### Port 8501 sudah digunakan
+
 ```
 streamlit run app.py --server.port 8502
 ```
 
 ### Error saat upload CSV
+
 → Pastikan format CSV sesuai dengan: `ipk,absen,kegiatan`
 
 ---
 
-## 📚 Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - **Python 3.8+**
 - **Scikit-learn** - Machine Learning
@@ -359,9 +376,10 @@ streamlit run app.py --server.port 8502
 
 ---
 
-## 👨‍💻 Developer Notes
+## Developer Notes
 
 Model dapat dikustomisasi dengan:
+
 - Menambah/mengurangi jumlah features
 - Mengubah hyperparameter di `train_model.py`
 - Menggunakan algoritma lain (Logistic Regression, SVM, dll)

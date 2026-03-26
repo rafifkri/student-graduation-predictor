@@ -6,10 +6,6 @@ from datetime import datetime
 import os
 import matplotlib.pyplot as plt
 
-# ============================================================================
-# PATH CONFIGURATION & SETUP
-# ============================================================================
-
 # Get project directory (parent of dashboard folder)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
@@ -21,20 +17,12 @@ PATHS = {
     'data': os.path.join(PROJECT_DIR, 'data', 'dataset.csv'),
 }
 
-# ============================================================================
-# PAGE CONFIGURATION
-# ============================================================================
-
 st.set_page_config(
     page_title="Prediksi Kelulusan Mahasiswa",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-# ============================================================================
-# MODEL & DATA LOADING
-# ============================================================================
 
 @st.cache_resource
 def load_model():
@@ -59,9 +47,6 @@ def load_dataset():
 model, encoder = load_model()
 df_data = load_dataset()
 
-# ============================================================================
-# UTILITY FUNCTIONS
-# ============================================================================
 
 def make_prediction(ipk, absen, kegiatan):
     input_data = np.array([[ipk, absen, kegiatan]])
@@ -94,10 +79,6 @@ def get_recommendations(ipk, absen, kegiatan):
     
     return recommendations
 
-# ============================================================================
-# SIDEBAR
-# ============================================================================
-
 st.title(" Sistem Prediksi Kelulusan Mahasiswa Tepat Waktu")
 st.markdown("---")
 
@@ -123,9 +104,6 @@ with st.sidebar:
     st.caption("Student Graduation Prediction System")
     st.caption("© 2024 - Data Science Project")
 
-# ============================================================================
-# MAIN TABS
-# ============================================================================
 
 tab1, tab2, tab3 = st.tabs([" Prediksi Individu", " Prediksi Batch", " Analisis Data"])
 
@@ -351,10 +329,6 @@ with tab3:
         ax.set_xlabel('Kegiatan')
         ax.set_ylabel('Frequency')
         st.pyplot(fig)
-
-# ============================================================================
-# FOOTER
-# ============================================================================
 
 st.markdown("---")
 st.markdown("""
